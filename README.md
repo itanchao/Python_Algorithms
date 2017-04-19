@@ -7,6 +7,9 @@ Python算法题
 
   ```python
   def bubbleSort(array):
+      '''
+      	思路：从0开始，每一次比较临近的两个元素大小，进行位置互换 
+      '''
       num = len(array)
       for i in range(0, num):
           for j in range(0, (num - i - 1)):
@@ -31,6 +34,9 @@ Python算法题
 
   ```python
   def selectSort(array):
+      '''
+      	思路：每一次查找最小的一个数字转移到第一位 
+      '''
       num = len(array)
       for i in range(0, num - 1):
           index = i
