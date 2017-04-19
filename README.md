@@ -51,4 +51,3 @@ python算法题
   运行结果：
 
   ![运行结果](./image/selectSort.png)
-
