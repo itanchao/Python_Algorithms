@@ -3,7 +3,7 @@ python算法题
 
 * 对以下一组数据进行降序排序（冒泡排序）。“24，17，85，13，9，54，76，45，5，63”
 
-  ```
+  ```python
   def bubbleSort(array):
       num = len(array)
       for i in range(0, num):
