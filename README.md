@@ -48,4 +48,7 @@ python算法题
   print(array)
   ```
 
-  ​
+  运行结果：
+
+  ![运行结果](./image/selectSort.png)
+
