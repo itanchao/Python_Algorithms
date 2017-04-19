@@ -1,5 +1,5 @@
 # Python_Algorithms
-python算法题
+Python算法题
 
 * 对以下一组数据进行降序排序（冒泡排序）。
 
