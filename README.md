@@ -5,7 +5,7 @@ python算法题
 
   24，17，85，13，9，54，76，45，5，63
 
-  ```
+  ```python
   def bubbleSort(array):
       num = len(array)
       for i in range(0, num):
@@ -49,4 +49,3 @@ python算法题
   ```
 
   ​
-
