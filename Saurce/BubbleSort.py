@@ -22,9 +22,14 @@
 
 #  对以下一组数据进行降序排序（冒泡排序）。“24，17，85，13，9，54，76，45，5，63”
 def bubbleSort(array):
+    '''
+    从0开始，每一次比较临近的两个元素大小，进行位置互换 
+    '''
     num = len(array)
     for i in range(0, num):
         for j in range(0, (num - i - 1)):
+            print('%d---------------->%d'%(i,j))
+            print(array)
             if array[j] < array[j + 1]:
                 tmp = array[j]
                 array[j] = array[j + 1]
