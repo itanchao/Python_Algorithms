@@ -12,16 +12,18 @@ class Array(list):
         list.append(self,p_object)
 
     def lastObject(self):
-        if len(self) < 1:
-            return None
-        else:
-            return self[len(self)-1]
+        return None if len(self) < 1 else self[len(self)-1]
+        # if len(self) < 1:
+        #     return None
+        # else:
+        #     return self[len(self)-1]
 
     def firstObject(self):
-        if len(self):
-            return None
-        else:
-            return self[0]
+        return None if len(self) < 1 else self[0]
+        # if len(self):
+        #     return None
+        # else:
+        #     return self[0]
 
 
 mylist = [['#', 'S', '#', '#', '#', '#', '#', '#', '.', '#'],
@@ -55,7 +57,7 @@ deltaY = [0, 1, 0, -1]
 
 str1 = str(startX)+str(startY)
 pointSet = [str1]
-Queue = []
+Queue = Array()
 def LogPoint(point):
     # print(point.serialize())
     if point.prePoint != None:
