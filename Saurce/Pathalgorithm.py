@@ -5,8 +5,7 @@ class Point:
         self.prePoint = None
 
     def serialize(self):
-        return str('(x = ') + str(self.x) + str(', y = ') + str(self.y) + ')'
-
+        return str((self.x,self.y))
 
 class Array(list):
     def append(self, p_object):
@@ -94,6 +93,11 @@ def checkthisPoint(x,y):
 # bfs()
 
 bfsCurrent(point=Point(startX,startY))
+pointstr = ''
+for i in  range(len(Queue)):
+    point = Queue[i]
+    if i % 4 == 0:
+        pointstr = pointstr + '\n'
+    pointstr = pointstr + '=>' + point.serialize()
 
-for p in Queue:
-    print(p.serialize())
+print(pointstr)
