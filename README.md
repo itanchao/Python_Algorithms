@@ -140,3 +140,6 @@ def checkthisPoint(x,y):
         return None
 ~~~
 
+运行结果:
+
+![运行结果](./image/pathalgorithm.png)

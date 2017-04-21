@@ -56,11 +56,13 @@ deltaY = [0, 1, 0, -1]
 
 str1 = str(startX)+str(startY)
 pointSet = [str1]
-
+Queue = []
 def LogPoint(point):
-    print(point.serialize())
+    # print(point.serialize())
     if point.prePoint != None:
         LogPoint(point.prePoint)
+    Queue.append(point)
+
 
 def bfsCurrent(point):
     if point.x == endX and point.y == endY:
@@ -92,3 +94,6 @@ def checkthisPoint(x,y):
 # bfs()
 
 bfsCurrent(point=Point(startX,startY))
+
+for p in Queue:
+    print(p.serialize())
