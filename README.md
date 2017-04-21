@@ -87,3 +87,56 @@ Python算法题
   运行结果：
 
   ![运行结果](./image/binarychop.png)
+
+* 路径搜索
+
+  S为开始点，G为终点，从S点出发前往G点，‘#’ 是不能通过的点
+
+  |  #   |  S   |  #   |  #   |  #   |  #   |  #   |  #   |  .   |  #   |
+  | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+  |  .   |  .   |  .   |  .   |  .   |  .   |  #   |  .   |  .   |  #   |
+  |  .   |  #   |  .   |  #   |  #   |  .   |  #   |  #   |  .   |  #   |
+  |  .   |  #   |  .   |  .   |  .   |  .   |  .   |  .   |  .   |  .   |
+  |  #   |  #   |  .   |  #   |  #   |  .   |  #   |  #   |  #   |  #   |
+  |  .   |  .   |  .   |  .   |  #   |  .   |  .   |  .   |  .   |  #   |
+  |  .   |  #   |  #   |  #   |  #   |  #   |  #   |  #   |  .   |  #   |
+  |  .   |  .   |  .   |  .   |  #   |  .   |  .   |  .   |  .   |  .   |
+  |  .   |  #   |  #   |  #   |  #   |  .   |  #   |  #   |  #   |  .   |
+  |  .   |  .   |  .   |  .   |  #   |  .   |  .   |  .   |  G   |  #   |
+
+~~~python
+# X 和 Y轴位移 每次只能在一种方向上移动
+deltaX = [1, 0, -1, 0]
+deltaY = [0, 1, 0, -1]
+# 遍历当前点
+def bfsCurrent(point):
+    # 判断是否是终点
+    if point.x == endX and point.y == endY:
+        print('===============>找到路线了',point.serialize())
+        LogPoint(point)
+        return point
+    for i in range(4):
+        # 计算移动后的点坐标
+        nx = point.x + deltaX[i]
+        ny = point.y + deltaY[i]
+        key = str(nx) + str(ny)
+        # 判断该点坐标是否超过范围，以及该坐标上是否可以通过
+        if checkthisPoint(x = nx, y = ny):
+            if key not in pointSet:
+                pointSet.append(key)
+                # print('当前点(%d,%d)====>To(%d,%d)'%(point.x,point.y,nx,ny))
+                currentPoint = Point(nx,ny)
+                currentPoint.prePoint = point
+                bfsCurrent(currentPoint)
+
+# 判断该坐标是否为可经过点
+def checkthisPoint(x,y):
+    if x > 0 and x < 10 and y < 10 and y > 0:
+        if mylist[y][x] != '#':
+            return Point(x,y)
+        else:
+            return None
+    else:
+        return None
+~~~
+
