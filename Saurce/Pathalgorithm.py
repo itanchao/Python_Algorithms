@@ -4,8 +4,12 @@ class Point:
         self.y = y
         self.prePoint = None
 
-    def serialize(self):
-        return str((self.x,self.y))
+    def __str__(self):
+	    """
+	    重写打印方法
+	    """
+	    return str((self.x,self.y))
+
 
 class Array(list):
     def append(self, p_object):
@@ -67,7 +71,7 @@ def LogPoint(point):
 
 def bfsCurrent(point):
     if point.x == endX and point.y == endY:
-        print('===============>找到路线了',point.serialize())
+        print('===============>找到路线了',point)
         LogPoint(point)
         return point
     for i in range(4):
@@ -100,6 +104,6 @@ for i in  range(len(Queue)):
     point = Queue[i]
     if i % 4 == 0:
         pointstr = pointstr + '\n'
-    pointstr = pointstr + '=>' + point.serialize()
+    pointstr = pointstr + '=>%s'%point
 
 print(pointstr)
