@@ -9,7 +9,7 @@ class Point:
 
 class Array(list):
     def append(self, p_object):
-        list.append(self,p_object)
+	    return super(Array, self).append(p_object)
 
     def lastObject(self):
         return None if len(self) < 1 else self[len(self)-1]
