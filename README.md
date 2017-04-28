@@ -143,3 +143,26 @@ def checkthisPoint(x,y):
 运行结果:
 
 ![运行结果](./image/pathalgorithm.png)
+
+* 斐波那契数
+
+~~~python
+class FIBS:
+	def __init__(self,max = 10):
+		self.a = 0
+		self.b = 1
+		self.max = max
+
+	def __iter__(self):
+		return self
+
+	def __next__(self):
+		self.a,self.b = self.b, self.a + self.b
+		if self.a > self.max:
+			raise StopIteration
+		return self.a
+~~~
+
+运行结果:
+
+![](./image/FIBS.png)
