@@ -1,5 +1,5 @@
 class FIBS:
-	def __init__(self,max = 10):
+	def __init__(self, max = 10):
 		self.a = 0
 		self.b = 1
 		self.max = max
